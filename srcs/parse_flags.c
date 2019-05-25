@@ -20,7 +20,7 @@ void	parse_flags(t_printf *p)
 		get_printf_wildcard(p);
 	if (*(p->format + p->i) == 's')
 		(p->f & F_LONG || p->f & F_LONG2) ? pf_putwstr(p) : pf_putstr(p);
-	else if (ft_strchr("dDi", *(p->format + p->i)))
+	/*else if (ft_strchr("dDi", *(p->format + p->i)))
 		pf_putnbr(p);
 	else if (*(p->format + p->i) == 'f' || *(p->format + p->i) == 'F')
 		(p->f & F_APP_PRECI && !p->precision) ? pf_putnb(p) : pf_putdouble(p);
@@ -39,7 +39,7 @@ void	parse_flags(t_printf *p)
 	else if (*(p->format + p->i) == '{')
 		color(p);
 	else
-		cs_not_found(p);
+		cs_not_found(p);*/
 //	else
 //	{
 //		ft_putchar('%'); // REPLACE WITH PUT_IN_BUF
