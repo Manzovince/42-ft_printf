@@ -9,11 +9,11 @@
 - [ ] %x/%X : On écrit 0x + On transforme l’entier en base 16 + 2 (base hexa)
 - [x] %c : ft_putchar
 - [x] %s : ft_putstr
-- [ ] %f : Afficher un double
+- [x] %f : Afficher un double
 - [ ] %e/%E : Afficher un double
 - [ ] %g/%G : Afficher un double
 - [ ] %p : Afficher l'adresse d'un pointeur
-- [ ] %n : Nombre de caractères affficher par printf
+- [x] %n : Nombre de caractères affficher par printf
 
 - [x] '% '/%% : Pas d'arguments
 - [x] %* : wildcard
