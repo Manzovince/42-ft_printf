@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:14:30 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/05/09 22:47:33 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/09/30 15:32:49 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,39 @@
 */
 
 #include <stdarg.h>
+#include <errno.h>
+#include <stdint.h> // ????????????????????
+#include <stdio.h>
 #include "../libft/includes/libft.h"
 
 /*
-** --------------------------------- STRUCTURES --------------------------------
+** --------------------------------- DEFINES -----------------------------------
 */
 
-# define BUFF_SIZE 2048
+# define PF_BUFFSIZE		2048
+# define MASK(value, mask)	((value & mask) == mask)
 
+
+/*
+** ------------------------------- FLAGS MASK ----------------------------------
+*/
+
+# define F_HASH			(1 << 0)
+# define F_SPACE		(1 << 1)
+# define F_PLUS			(1 << 2)
+# define F_MINUS    	(1 << 3)
+# define F_ZERO			(1 << 4)
+# define F_WILDCARD		(1 << 5)
+# define F_UPCASE		(1 << 6)
+# define F_SHORT		(1 << 7)
+# define F_SHORT2		(1 << 8)
+# define F_LONG	 		(1 << 9)
+# define F_LONG2		(1 << 10)
+# define F_INTMAX		(1 << 11)
+# define F_SIZE_T		(1 << 12)
+# define F_MIN_LEN		(1 << 13)
+# define F_PRECI		(1 << 14)
+# define F_POINTER		(1 << 15)
 
 /*
 ** --------------------------------- STRUCTURES --------------------------------
@@ -34,10 +59,15 @@
 typedef struct	s_printf
 {
 	char		*format;
-	char		buf[BUFF_SIZE];
+	char		*buf;
 	va_list		ap;
-	size_t		i;		//ptr position in format
+	size_t		i;		// ptr position in format
+	size_t		b;		// ptr position in buffer
+	int			flag;
 	int			fd;
+	int			wildcard;
+	int			afterpoint;
+	char		c;
 }				t_printf;
 
 /*
@@ -45,9 +75,25 @@ typedef struct	s_printf
 */
 
 int		ft_printf(const char *format, ...);
+int		ft_sprintf(char *buffer, const char *format, ...);
+int		ft_dprintf(int fd, const char *format, ...);
+
+/*
+** ------------------------------ BUFFER FUNCTIONS -----------------------------
+*/
+
+void	putcharbuf(t_printf *p, char new);
+void	putstrbuf(t_printf *p, char *new);
+
+/*
+** ------------------------------- FLAGS FUNCTIONS -----------------------------
+*/
+
 void	parse_flags(t_printf *p);
-void	get_printf_precision(t_printf *p);
-void	get_printf_wildcard(t_printf *p);
+void	pf_getflags(t_printf *p);
+void	pf_precision(t_printf *p);
+void	pf_wildcard(t_printf *p, int len);
+void	apply_flag(t_printf *p, char *new);
 
 /*
 ** ------------------------------- ERROR FUNCTIONS -----------------------------
@@ -75,13 +121,5 @@ void	ft_printf_str(t_printf *p);
 */
 
 void			ft_putchar_color(char c, char color);
-
-# define RED		"\033[31m"
-# define GREEN		"\033[32m"
-# define YELLOW		"\033[33m"
-# define BLUE		"\033[34m"
-# define PURPLE		"\033[35m"
-# define CYAN		"\033[36m"
-# define EOC		"\033[36m"
 
 #endif

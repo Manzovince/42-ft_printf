@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_sprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:12:04 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/09/17 10:52:01 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/09/30 15:32:20 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
 /*
-** Basic version of ft_printf, print on standart output (fd = 1)
+** Basic version of ft_sprintf, print on given buffer
 */
 
-int		ft_printf(const char *format, ...)
+int		ft_sprintf(char *buffer, const char *format, ...)
 {
 	t_printf	p;
 
@@ -38,7 +38,7 @@ int		ft_printf(const char *format, ...)
 			putcharbuf(&p, *(p.format + p.i));
 		p.i++;
 	}
-	ft_putstr(p.buf);
+	ft_putstr(p.buf); // CHANGE THIS
 	va_end(p.ap);
 	return (p.b);
 }
