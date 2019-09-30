@@ -19,13 +19,13 @@
 - [x] %* / %[number] : wildcard
 - [x] %.4 : precision
 
-## man
+## man printf
 
 ### diouxX
 The int (or appropriate variant) argument is converted to signed decimal (d
 and i), unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x
-and X) notation.  The letters ``abcdef'' are used for x conversions; the let-
-ters ``ABCDEF'' are used for X conversions.  The precision, if any, gives the
+and X) notation.  The letters `abcdef` are used for x conversions; the let-
+ters `ABCDEF` are used for X conversions.  The precision, if any, gives the
 minimum number of digits that must appear; if the converted value requires
 fewer digits, it is padded on the left with zeros.
 
@@ -39,7 +39,7 @@ The double argument is rounded and converted in the style [-]d.ddde+-dd where
 there is one digit before the decimal-point character and the number of dig-
 its after it is equal to the precision; if the precision is missing, it is
 taken as 6; if the precision is zero, no decimal-point character appears.  An
-E conversion uses the letter `E' (rather than `e') to introduce the exponent.
+E conversion uses the letter `E` (rather than `e`) to introduce the exponent.
 The exponent always contains at least two digits; if the value is zero, the
 exponent is 00.
 
@@ -65,11 +65,11 @@ style [-]0xh.hhhp[+-]d, where the number of digits after the hexadecimal-
 point character is equal to the precision specification.  If the precision is
 missing, it is taken as enough to represent the floating-point number
 exactly, and no rounding occurs.  If the precision is zero, no hexadecimal-
-point character appears.  The p is a literal character `p', and the exponent
+point character appears.  The p is a literal character `p`, and the exponent
 consists of a positive or negative sign followed by a decimal number repre-
-senting an exponent of 2.  The A conversion uses the prefix ``0X'' (rather
-than ``0x''), the letters ``ABCDEF'' (rather than ``abcdef'') to represent
-the hex digits, and the letter `P' (rather than `p') to separate the mantissa
+senting an exponent of 2.  The A conversion uses the prefix `0X` (rather
+than `0x`), the letters `ABCDEF` (rather than `abcdef`) to represent
+the hex digits, and the letter `P` (rather than `p`) to separate the mantissa
 and exponent.
 
 For a, A, e, E, f, F, g, and G conversions, positive and negative infinity
@@ -83,7 +83,7 @@ bers in this hexadecimal format.  For example, 0x1.92p+1, 0x3.24p+0,
 0x6.48p-1, and 0xc.9p-2 are all equivalent.  The format chosen depends on the
 internal representation of the number, but the implementation guarantees that
 the length of the mantissa will be minimized.  Zeroes are always represented
-with a mantissa of 0 (preceded by a `-' if appropriate) and an exponent of
+with a mantissa of 0 (preceded by a `-`` if appropriate) and an exponent of
 +0.
 
 ### C
@@ -126,8 +126,8 @@ resentation of the string, the array must contain a terminating wide NUL
 character.
 
 ### p
-The void * pointer argument is printed in hexadecimal (as if by `%#x' or
-`%#lx').
+The void * pointer argument is printed in hexadecimal (as if by `%#x` or
+`%#lx`).
 
 ### n
 The number of characters written so far is stored into the integer indicated
@@ -136,8 +136,8 @@ format argument must be in write-protected memory if this specifier is used;
 see SECURITY CONSIDERATIONS below.
 
 ### %
-A `%' is written.  No argument is converted.  The complete conversion speci-
-fication is `%%'.
+A `%` is written.  No argument is converted.  The complete conversion speci-
+fication is `%%`.
 
 The decimal point character is defined in the program's locale (category LC_NUMERIC).
 
