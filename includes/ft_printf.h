@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:14:30 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/09/30 15:32:49 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/10/02 16:03:48 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@
 # define F_MINUS    	(1 << 3)
 # define F_ZERO			(1 << 4)
 # define F_WILDCARD		(1 << 5)
-# define F_UPCASE		(1 << 6)
+# define F_LONGD		(1 << 6)
 # define F_SHORT		(1 << 7)
 # define F_SHORT2		(1 << 8)
 # define F_LONG	 		(1 << 9)
 # define F_LONG2		(1 << 10)
-# define F_INTMAX		(1 << 11)
+# define F_COLOR		(1 << 11)
 # define F_SIZE_T		(1 << 12)
 # define F_MIN_LEN		(1 << 13)
 # define F_PRECI		(1 << 14)
@@ -91,9 +91,11 @@ void	putstrbuf(t_printf *p, char *new);
 
 void	parse_flags(t_printf *p);
 void	pf_getflags(t_printf *p);
-void	pf_precision(t_printf *p);
+void	pf_getlenmod(t_printf *p);
+void	pf_getprecision(t_printf *p);
 void	pf_wildcard(t_printf *p, int len);
 void	apply_flag(t_printf *p, char *new);
+void 	update_flag(t_printf *p, int flag);
 
 /*
 ** ------------------------------- ERROR FUNCTIONS -----------------------------
@@ -106,20 +108,21 @@ void	print_error();
 ** %d %D %i %f %F %b %B %o %O %u %U %h %H %s %S %c %C
 */
 
-void	ft_printf_nbr(t_printf *p);
+void	pf_nbr_conv(t_printf *p);
 
 /*
 ** ------------------------------- STR FUNCTIONS -------------------------------
 ** %c %s
 */
 
-void	ft_printf_str(t_printf *p);
+void	pf_str_conv(t_printf *p);
 
 /*
-** --------------------------------- COLOR FLAGS -------------------------------
+** ------------------------------------ COLOR ----------------------------------
 **  %{red} %{green} %{yellow} %{blue} %{purple} %{cyan} %{eoc}
 */
 
-void			ft_putchar_color(char c, char color);
+void	pf_getcolor(t_printf *p);
+int		pf_putcolor(t_printf *p, char *color);
 
 #endif

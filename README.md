@@ -1,6 +1,19 @@
 # ft_printf
 
 # TO DO
+
+- [ ] Vous devez recoder la fonction printf de la libc
+- [ ] Votre fonction s’appelera ft_printf et sera prototypée de la même façon que printf
+- [ ] Vous ne ferez pas la gestion de buffer présente dans la fonction printf de la libc.
+- [ ] Vous devez gérer les conversions suivantes : csp
+- [ ] Vous devez gérer les conversions suivantes : diouxX avec les flags hh, h, l, ll
+- [ ] Vous devez gérer la conversion suivante : f avec les flags l et L
+- [x] Vous devez gérer le %%
+- [x] Vous devez gérer les flags #0-+ et espace
+- [x] Vous devez gérer la taille minimum du champ
+- [x] Vous devez gérer la précision
+
+
 ## Flags
 - [ ] %b : On transforme en binaire
 - [ ] %o : Afficher 0 + On transforme l’entier en base 8 + 1 (base octal)
@@ -20,6 +33,8 @@
 - [x] %.4 : precision
 
 ## man printf
+
+#### Format = % [flags] [field_width] [.precision] [length_modifier] conversion_character
 
 ### diouxX
 The int (or appropriate variant) argument is converted to signed decimal (d and i), unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x and X) notation.
