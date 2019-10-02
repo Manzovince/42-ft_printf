@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:14:30 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/10/02 16:03:48 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/10/02 16:13:42 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 #include <stdarg.h>
 #include <errno.h>
-#include <stdint.h> // ????????????????????
-#include <stdio.h>
 #include "../libft/includes/libft.h"
 
 /*

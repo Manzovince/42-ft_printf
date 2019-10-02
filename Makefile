@@ -6,7 +6,7 @@
 #    By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 14:14:09 by vmanzoni          #+#    #+#              #
-#    Updated: 2019/10/02 15:31:17 by vmanzoni         ###   ########.fr        #
+#    Updated: 2019/10/02 16:32:29 by vmanzoni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,13 @@ all:	$(NAME)
 
 $(NAME):
 	$(CC) $(CFLAGS) $(LFLAGS) $(addprefix $(SRC_DIR), $(SRCS))
+	mkdir $(OBJ_DIR)
 	mv *.o $(OBJ_DIR)
-	ar rc $(NAME) libft/libft.a $(addprefix $(OBJ_DIR), $(OBJS))
-#	@echo "\033[1;34mLibftprintf.a\t\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
+	ar rcs $(NAME) libft/libft.a $(addprefix $(OBJ_DIR), $(OBJS))
+	@echo "\033[1;34mLibftprintf.a\t\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
+
+libft:
+	make re -C libft
 
 test:
 	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) $(addprefix $(SRC_DIR), $(SRCS)) $(MAIN) -o ft_printf

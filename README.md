@@ -101,3 +101,10 @@ A `%` is written.  No argument is converted. The complete conversion specificati
 The decimal point character is defined in the program's locale (category LC_NUMERIC).
 
 In no case does a non-existent or small field width cause truncation of a numeric field; if the result of a conversion is wider than the field width, the field is expanded to contain the conversion result.
+
+## Cool links
+
+- http://personal.ee.surrey.ac.uk/Personal/R.Bowden/C/printf.html
+- https://www.cprogramming.com/tutorial/printf-format-strings.html
+- https://www.lix.polytechnique.fr/~liberti/public/computing/prog/c/C/FUNCTIONS/format.html
+- https://docs.microsoft.com/fr-fr/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=vs-2019
