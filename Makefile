@@ -6,7 +6,7 @@
 #    By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 14:14:09 by vmanzoni          #+#    #+#              #
-#    Updated: 2019/10/02 16:32:29 by vmanzoni         ###   ########.fr        #
+#    Updated: 2019/10/02 16:59:22 by vmanzoni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS	=	ft_dprintf.c\
 			color.c\
 			wildcard.c
 
-MAIN	=	main_test.c
+MAIN	=	my_test_main.c
 
 OBJ_DIR	=	objs/
 OBJS	=	$(SRCS:.c=.o)
