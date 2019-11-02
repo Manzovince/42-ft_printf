@@ -1,16 +1,18 @@
 # ft_printf
 
+> :point_up: **Halte!** Si tu es à l'école 42 et que tu n'as pas encore fini ce projet, sache que faire fonctionner ton cerveau te sera plus utile que recopier ce que j'ai fait!
+
 # TO DO
 
 - [x] Vous devez recoder la fonction printf de la libc
-- [x] Votre fonction s’appelera ft_printf et sera prototypée de la même façon que printf
-- [ ] Vous devez gérer les conversions suivantes : csp
-- [x] Vous devez gérer les conversions suivantes : diouxX avec les flags hh, h, l, ll
-- [ ] Vous devez gérer la conversion suivante : f avec les flags l et L
-- [x] Vous devez gérer le %%
-- [x] Vous devez gérer les flags #0-+ et espace
-- [x] Vous devez gérer la taille minimum du champ
-- [x] Vous devez gérer la précision
+- [x] Votre fonction s’appelera ft_printf et sera prototypée de la même façon que printf
+- [ ] Vous devez gérer les conversions suivantes : csp
+- [x] Vous devez gérer les conversions suivantes : diouxX avec les flags hh, h, l, ll
+- [ ] Vous devez gérer la conversion suivante : f avec les flags l et L
+- [x] Vous devez gérer le %%
+- [x] Vous devez gérer les flags #0-+ et espace
+- [x] Vous devez gérer la taille minimum du champ
+- [x] Vous devez gérer la précision
 
 ## man printf
 
